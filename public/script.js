@@ -34,6 +34,15 @@ const getGenres = async () => {
 };
 
 
+const getMovies = () => {
+  const selectedGenre = getSelectedGenre();
+
+};
+
+const getMovieInfo = () => {
+
+};
+
 // Gets a list of movies and ultimately displays the info of a random movie from the list
 const showRandomMovie = () => {
   const movieInfo = document.getElementById('movieInfo');

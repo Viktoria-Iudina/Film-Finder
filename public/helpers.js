@@ -62,6 +62,15 @@ const createMovieTitle = (title) => {
   return titleHeader;
 };
 
+// Create HTML for movie release date
+const createReleaseDate = (date) => {
+  const releaseDate = document.createElement('h3');
+  releaseDate.setAttribute('id', 'releaseDate');
+  releaseDate.innerHTML = date;
+
+  return releaseDate;
+};
+
 // Create HTML for movie overview
 const createMovieOverview = (overview) => {
   const overviewParagraph = document.createElement('p');
@@ -89,10 +98,14 @@ const displayMovie = (movieInfo) => {
   const moviePoster = createMoviePoster(movieInfo.poster_path);
   const titleHeader = createMovieTitle(movieInfo.title);
   const overviewText = createMovieOverview(movieInfo.overview);
+  const releaseDate = createReleaseDate(movieInfo.release_date);
+
+
 
   // Append title, poster, and overview to page
   moviePosterDiv.appendChild(moviePoster);
   movieTextDiv.appendChild(titleHeader);
+  movieTextDiv.appendChild(releaseDate);
   movieTextDiv.appendChild(overviewText);
 
   showBtns();

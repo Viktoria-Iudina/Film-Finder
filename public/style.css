@@ -8,7 +8,7 @@ body {
   margin: 0px auto;
   display: block;
   font-family: 'Staatliches', sans-serif;
-  font-size: 80px;
+  font-size: 60px;
 }
 
 #genreForm, #playBtn {
@@ -19,7 +19,7 @@ body {
 }
 
 #movieInfo {
-  width:  65%;
+  width:  60%;
   margin:  32px auto;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 img#moviePoster {
-  width:  100%;
+  width:  90%;
   height:  auto;
   display:  block;
   margin:  auto;
@@ -44,21 +44,23 @@ img#moviePoster {
 #movieText {
   font-family: 'Questrial';
   color: #FEFBEA;
-  line-height: 1.25;
+  line-height: 1.35;
+  letter-spacing: 0.3px;
 }
 
-#movieTitle, #movieOverview {
-  padding:  32px;
+#movieTitle, #movieOverview, #releaseDate {
+  padding: 1px 30px;
 }
+
 
 #playBtn {
   margin-top: 20px;
   font-size: 25px;
-  padding: 7px 10px;
+  padding: 7px 19px;
   border-radius: 10px;
   border-style: none;
-  background-color: #B97828;
-  color: #fdc238;
+  color: #7f0920;
+  background-color: #d39d1f;
   cursor:  pointer;
 }
 

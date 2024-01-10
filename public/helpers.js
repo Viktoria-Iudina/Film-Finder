@@ -16,6 +16,11 @@ const getSelectedGenre = () => {
   return selectedGenre;
 };
 
+
+
+
+
+
 // Displays the like and dislike buttons on the page
 const showBtns = () => {
   const btnDiv = document.getElementById('likeOrDislikeBtns');
@@ -41,6 +46,52 @@ const dislikeMovie = () => {
   clearCurrentMovie();
   showRandomMovie();
 };
+
+
+
+// Display liked movies in the HTML
+function displayLikedMovies() {
+  const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || [];
+  const likedMoviesList = document.getElementById('liked-movies');
+  
+  likedMoviesList.innerHTML = ''; // Clear previous list content
+  
+  likedMovies.forEach(movie => {
+    const listItem = document.createElement('li');
+    listItem.textContent = movie;
+    likedMoviesList.appendChild(listItem);
+  });
+}
+
+// Function to add a movie to the liked movies list
+function addLikedMovie(movie) {
+  const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || [];
+  likedMovies.push(movie);
+  localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
+  displayLikedMovies(); // Update liked movies display
+}
+
+// Add event listeners to like and dislike buttons
+function setupButtons() {
+  const likeButton = document.getElementById('likeBtn');
+  const dislikeButton = document.getElementById('dislikeBtn');
+
+  likeButton.addEventListener('click', function() {
+    const movieText = document.getElementById('movieText').textContent;
+    addLikedMovie(movieText);
+  });
+}
+
+// Call setupButtons function and displayLikedMovies on window load
+window.onload = function() {
+  setupButtons();
+  displayLikedMovies();
+};
+
+
+
+
+
 
 // Create HTML for movie poster
 const createMoviePoster = (posterPath) => {
